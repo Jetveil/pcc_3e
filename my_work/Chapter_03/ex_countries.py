@@ -32,3 +32,5 @@ print('------')
 
 print(len(countries))
 print('------')
+
+print(countries[-1])
