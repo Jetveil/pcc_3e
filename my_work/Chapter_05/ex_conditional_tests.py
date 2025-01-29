@@ -20,3 +20,16 @@ if a > b and c > b:
     print('False')
 if a > b or c > b:
     print('True')
+
+print('----')
+
+nums = [1, 2, 4, '3']
+num1 = 2
+num2 = '3'
+num3 = 8
+if num1 in nums:
+    print(num1)
+if num2 in nums:
+    print(type(num2))
+if num3 not in nums:
+    print('Not found')
