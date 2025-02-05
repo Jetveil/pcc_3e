@@ -24,3 +24,8 @@ else:
 
 alien_0['x_pos'] += x_increment
 print(f'New position with {alien_0["speed"]} speed: {alien_0["x_pos"]}')
+
+# alien_0['level']
+
+level_value = alien_0.get('level', 'No level value assigned')
+print(level_value)
