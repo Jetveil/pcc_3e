@@ -5,4 +5,5 @@ user_0 = {
 }
 
 for k, v in user_0.items():
-    print(k, v)
+    print(f'Key: {k}')
+    print(f'Value: {v}')
