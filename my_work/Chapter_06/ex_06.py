@@ -76,17 +76,50 @@
 
 # ex 6.6
 
-favorite_languages = {
-    'jen': 'python',
-    'sarah': 'c',
-    'edward': 'rust',
-    'phil': 'python',
+# favorite_languages = {
+#     'jen': 'python',
+#     'sarah': 'c',
+#     'edward': 'rust',
+#     'phil': 'python',
+# }
+
+# poll_ppl = ['jen', 'sarah', 'edward', 'phil', 'alina', 'mark']
+
+# for name in poll_ppl:
+#     if name in favorite_languages:
+#         print(f"{name.title()}, thank you for taking the poll")
+#     else:
+#         print(f"{name.title()}, would you like to take a poll?")
+
+# ex 6.7
+
+
+people = []
+
+person = {
+    'first_name': 'Semen',
+    'last_name': 'Swallow',
+    'age': 19,
+    'city': 'Kama'
 }
+people.append(person)
 
-poll_ppl = ['jen', 'sarah', 'edward', 'phil', 'alina', 'mark']
+person = {
+    'first_name': 'Ilya',
+    'last_name': 'Davydov',
+    'age': 30,
+    'city': 'Jopinsk'
+}
+people.append(person)
 
-for name in poll_ppl:
-    if name in favorite_languages:
-        print(f"{name.title()}, thank you for taking the poll")
-    else:
-        print(f"{name.title()}, would you like to take a poll?")
+person = {
+    'first_name': 'Gosha',
+    'last_name': 'Dudar',
+    'age': 24,
+    'city': 'Wonderland'
+}
+people.append(person)
+
+for person in people:
+    for k, v in person.items():
+        print(person)
