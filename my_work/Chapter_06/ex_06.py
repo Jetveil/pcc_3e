@@ -94,32 +94,97 @@
 # ex 6.7
 
 
-people = []
+# people = []
 
-person = {
-    'first_name': 'Semen',
-    'last_name': 'Swallow',
-    'age': 19,
-    'city': 'Kama'
-}
-people.append(person)
+# person = {
+#     'first_name': 'Semen',
+#     'last_name': 'Swallow',
+#     'age': 19,
+#     'city': 'Kama'
+# }
+# people.append(person)
 
-person = {
-    'first_name': 'Ilya',
-    'last_name': 'Davydov',
-    'age': 30,
-    'city': 'Jopinsk'
-}
-people.append(person)
+# person = {
+#     'first_name': 'Ilya',
+#     'last_name': 'Davydov',
+#     'age': 30,
+#     'city': 'Jopinsk'
+# }
+# people.append(person)
 
-person = {
-    'first_name': 'Gosha',
-    'last_name': 'Dudar',
-    'age': 24,
-    'city': 'Wonderland'
-}
-people.append(person)
+# person = {
+#     'first_name': 'Gosha',
+#     'last_name': 'Dudar',
+#     'age': 24,
+#     'city': 'Wonderland'
+# }
+# people.append(person)
 
-for person in people:
-    for k, v in person.items():
-        print(person)
+# for person in people:
+#     for k, v in person.items():
+#         print(f"{k} : {v}")
+#     print('----')
+
+# ex 6.8
+
+
+# pets = []
+
+# pet = {
+#     'nickname': 'markiz',
+#     'animal': 'cat',
+#     'owner': 'dim'
+# }
+
+# pets.append(pet)
+
+# pet = {
+#     'nickname': 'jessie',
+#     'animal': 'dog',
+#     'owner': 'sasha'
+# }
+
+# pets.append(pet)
+
+# pet = {
+#     'nickname': 'tori',
+#     'animal': 'humster',
+#     'owner': 'jack'
+# }
+
+# pets.append(pet)
+
+# for pet in pets:
+#     for k, v in pet.items():
+#         print(f"{k.title()} : {v.title()}")
+#     print('----')
+
+# ex. 6.9
+
+# favorite_places = {
+#     'semen': ['grand canyon', 'alaska'],
+#     'ilya davydov': ['hyperborea', 'atlantida', 'flander\'s house'],
+#     'gosha dudar': ['infocygan valley']
+# }
+
+# for name, places in favorite_places.items():
+#     print(f"{name.title()}\'s favorite places are:")
+#     for place in places:
+#         print(f"\t{place.title()}")
+
+# ex 6.10
+
+# favorite_numbers = {
+#     'mandy': [42, 15, 228, 93],
+#     'micah': [23, 0.1, 17],
+#     'gus': [7, 12],
+#     'hank': [1_000_000],
+#     'maggie': [0],
+# }
+
+# for names, numbers in favorite_numbers.items():
+#     print(f"{names.title()}\'s fav numbers are:")
+#     for number in numbers:
+#         print(f"\t{number}")
+
+# ex. 6.11
