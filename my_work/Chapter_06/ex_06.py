@@ -188,3 +188,28 @@
 #         print(f"\t{number}")
 
 # ex. 6.11
+
+# cities = {
+#     'spb': {
+#         'country': 'russia',
+#         'population': '6 million',
+#         'fact': 'moisty weather'
+#     },
+#     'beijing': {
+#         'country': 'china',
+#         'population': '22 million',
+#         'fact': 'the longest street in the world'
+#     },
+#     'new york': {
+#         'country': 'usa',
+#         'population': '8.5 million',
+#         'fact': 'the busiest railway station in the world'
+#     }
+# }
+
+# cities['spb']['country'] = 'ukraine'
+
+# for city, cityInfo in cities.items():
+#     print(city.title())
+#     for k, v in cityInfo.items():
+#         print(f"\t{k.title()} : {v.title()}")
