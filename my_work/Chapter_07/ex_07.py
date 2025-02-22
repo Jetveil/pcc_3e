@@ -85,3 +85,17 @@
 #             print(f"Your discount for {good} is 30%")
 #     except ValueError:
 #         print("Please enter a valid age (a whole number)!")
+
+# --- 7.8
+
+sandwich_orders = ['chill burger', 'chivito', 'doner kebab', 'gyro']
+finished_sandwiches = []
+
+for sandwitch in sandwich_orders:
+    print(f"{sandwitch.title()} is ready!")
+    finished_sandwiches.append(sandwitch)
+
+print("\nTotal sandwiches coocked:")
+
+for finished_sandwich in finished_sandwiches:
+    print(finished_sandwich.title())

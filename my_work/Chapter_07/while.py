@@ -56,3 +56,51 @@
 #         continue
 #     else:
 #         print(current_number)
+
+# --- confirmed_users --- WHILE ДЛЯ ПЕРЕБОРА СПИСКА
+
+# unconfirmed_users = ['dude1', 'dude2', 'dude3']
+# confirmed_users = []
+
+# while unconfirmed_users:
+#     current_user = unconfirmed_users.pop()
+
+#     print(f"Verifying {current_user}")
+#     confirmed_users.append(current_user)
+
+
+# print("\nThe following users have been confirmed:")
+# for confirmed_user in confirmed_users:
+#     print(f"{confirmed_user}")
+
+# --- pets --- WHILE ДЛЯ УДАЛЕНИЯ ОДИНАКОВЫХ ЗНАЧЕНИЙ ИЗ СПИСКА
+
+# pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+# print(pets)
+
+# while 'cat' in pets:
+#     pets.remove('cat')
+
+# print(pets)
+
+# --- СОХРАНЕНИЕ ВВЕДЕННОЙ ИНФОРМАЦИИ В СЛОВАРЕ
+
+responses = {}
+
+poll_isActive = True
+
+while poll_isActive:
+    name = input("\nName: ")
+    response = input("\nMountain to visit: ")
+
+    responses[name] = response
+
+    repeat = input("\nAnother name? (yes/no) ")
+
+    if repeat == 'no':
+        poll_isActive = False
+
+print('\nSummary: ')
+
+for name, response in responses.items():
+    print(f"{name.title()} whants to vsit {response.title()}")
