@@ -91,9 +91,10 @@
 sandwich_orders = ['chill burger', 'chivito', 'doner kebab', 'gyro']
 finished_sandwiches = []
 
-for sandwitch in sandwich_orders:
-    print(f"{sandwitch.title()} is ready!")
-    finished_sandwiches.append(sandwitch)
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop()
+    print(f"{current_sandwich.title()} is coocking!")
+    finished_sandwiches.append(current_sandwich)
 
 print("\nTotal sandwiches coocked:")
 
