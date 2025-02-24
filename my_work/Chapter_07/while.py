@@ -85,22 +85,22 @@
 
 # --- СОХРАНЕНИЕ ВВЕДЕННОЙ ИНФОРМАЦИИ В СЛОВАРЕ
 
-responses = {}
+# responses = {}
 
-poll_isActive = True
+# poll_isActive = True
 
-while poll_isActive:
-    name = input("\nName: ")
-    response = input("\nMountain to visit: ")
+# while poll_isActive:
+#     name = input("\nName: ")
+#     response = input("\nMountain to visit: ")
 
-    responses[name] = response
+#     responses[name] = response
 
-    repeat = input("\nAnother name? (yes/no) ")
+#     repeat = input("\nAnother name? (yes/no) ")
 
-    if repeat == 'no':
-        poll_isActive = False
+#     if repeat == 'no':
+#         poll_isActive = False
 
-print('\nSummary: ')
+# print('\nSummary: ')
 
-for name, response in responses.items():
-    print(f"{name.title()} whants to vsit {response.title()}")
+# for name, response in responses.items():
+#     print(f"{name.title()} whants to vsit {response.title()}")

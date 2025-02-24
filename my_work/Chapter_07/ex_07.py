@@ -88,15 +88,33 @@
 
 # --- 7.8
 
-sandwich_orders = ['chill burger', 'chivito', 'doner kebab', 'gyro']
+# sandwich_orders = ['chill burger', 'chivito', 'doner kebab', 'gyro']
+# finished_sandwiches = []
+
+# while sandwich_orders:
+#     current_sandwich = sandwich_orders.pop()
+#     print(f"{current_sandwich.title()} is coocking!")
+#     finished_sandwiches.append(current_sandwich)
+
+# print("\nTotal sandwiches coocked:")
+
+# for finished_sandwich in finished_sandwiches:
+#     print(finished_sandwich.title())
+
+# --- 7.9
+
+sandwich_orders = ['pastrami', 'chill burger', 'pastrami',
+                   'chivito', 'doner kebab', 'gyro', 'pastrami']
 finished_sandwiches = []
+print("We are out of pstrami")
+
+while 'pastrami' in sandwich_orders:
+    sandwich_orders.remove('pastrami')
 
 while sandwich_orders:
     current_sandwich = sandwich_orders.pop()
-    print(f"{current_sandwich.title()} is coocking!")
-    finished_sandwiches.append(current_sandwich)
-
-print("\nTotal sandwiches coocked:")
+    finished_sandwiches.append(sandwich_orders)
+    print(f"Coocking {sandwich_orders}...")
 
 for finished_sandwich in finished_sandwiches:
-    print(finished_sandwich.title())
+    print(f"{finished_sandwich.title()} is done!")
