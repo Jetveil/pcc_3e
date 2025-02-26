@@ -121,22 +121,22 @@
 
 # --- 7.10
 
-vacation_places = {}
+# vacation_places = {}
 
-poll_IsActive = True
+# poll_IsActive = True
 
-while poll_IsActive:
-    name = input("Enter your name: ")
-    prompt = input("Where would you like to go on Earth?: ")
+# while poll_IsActive:
+#     name = input("Enter your name: ")
+#     prompt = input("Where would you like to go on Earth?: ")
 
-    vacation_places[name] = prompt
+#     vacation_places[name] = prompt
 
-    repeat = input("Enter another name? (yes/no): ")
+#     repeat = input("Enter another name? (yes/no): ")
 
-    if repeat == 'no':
-        break
-    else:
-        continue
+#     if repeat == 'no':
+#         break
+#     else:
+#         continue
 
-for name, place in vacation_places.items():
-    print(f"{name.title()} wants to visit {place.title()} ")
+# for name, place in vacation_places.items():
+#     print(f"{name.title()} wants to visit {place.title()} ")
