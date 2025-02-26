@@ -103,18 +103,40 @@
 
 # --- 7.9
 
-sandwich_orders = ['pastrami', 'chill burger', 'pastrami',
-                   'chivito', 'doner kebab', 'gyro', 'pastrami']
-finished_sandwiches = []
-print("We are out of pstrami")
+# sandwich_orders = ['pastrami', 'chill burger', 'pastrami',
+#                    'chivito', 'doner kebab', 'gyro', 'pastrami']
+# finished_sandwiches = []
+# print("We are out of pstrami")
 
-while 'pastrami' in sandwich_orders:
-    sandwich_orders.remove('pastrami')
+# while 'pastrami' in sandwich_orders:
+#     sandwich_orders.remove('pastrami')
 
-while sandwich_orders:
-    current_sandwich = sandwich_orders.pop()
-    finished_sandwiches.append(sandwich_orders)
-    print(f"Coocking {sandwich_orders}...")
+# while sandwich_orders:
+#     current_sandwich = sandwich_orders.pop()
+#     finished_sandwiches.append(current_sandwich)
+#     print(f"Coocking {current_sandwich.title()}...")
 
-for finished_sandwich in finished_sandwiches:
-    print(f"{finished_sandwich.title()} is done!")
+# for finished_sandwich in finished_sandwiches:
+#     print(f"{finished_sandwich} is done!")
+
+# --- 7.10
+
+vacation_places = {}
+
+poll_IsActive = True
+
+while poll_IsActive:
+    name = input("Enter your name: ")
+    prompt = input("Where would you like to go on Earth?: ")
+
+    vacation_places[name] = prompt
+
+    repeat = input("Enter another name? (yes/no): ")
+
+    if repeat == 'no':
+        break
+    else:
+        continue
+
+for name, place in vacation_places.items():
+    print(f"{name.title()} wants to visit {place.title()} ")
