@@ -76,13 +76,80 @@
 
 # --- Возвращение словаря
 
-def build_person(first_name, last_name, age=''):
-    person = {'first': first_name, 'last': last_name}
+# def build_person(first_name, last_name, age=''):
+#     person = {'first': first_name, 'last': last_name}
 
-    if 'age':
-        person['age'] = age
-    return person
+#     if 'age':
+#         person['age'] = age
+#     return person
 
 
-musician = build_person('jimi', 'hendrix', age=27)
-print(musician)
+# musician = build_person('jimi', 'hendrix', age=27)
+# print(musician)
+
+
+# --- Использование функции в цикле while
+
+# def get_formatted_name(first_name, last_name):
+#     full_name = f"{first_name} {last_name}"
+#     return full_name.title()
+
+
+# while True:
+#     print(f"\nEnter the name or 'q' to quit...")
+#     f_name = input("Enter first name: ")
+#     if f_name == 'q':
+#         break
+#     l_name = input("Enter last name: ")
+#     if l_name == 'q':
+#         break
+
+#     greeting = get_formatted_name(f_name, l_name)
+#     print(f"\nNice to meet you, {greeting}")
+
+# --- Передача списка
+
+# def greet_users(names):
+#     for name in names:
+#         msg = f"Hello, {name.title()}"
+#         print(msg)
+
+
+# users = ['hannah', 'tyler', 'mike']
+# greet_users(users)
+
+# --- Изменение списка в функции (без использования функции)
+
+# unprinted_models = ['geralt', 'ciri', 'ada wong']
+# completed_models = []
+
+# while unprinted_models:
+#     current_model = unprinted_models.pop()
+#     print(f"Printing model {current_model}...")
+#     completed_models.append(current_model)
+
+# print()
+
+# for model in completed_models:
+#     print(f"Model {model} completed")
+
+# --- Изменение списка в функции(c использованием функции)
+
+# def print_models(unprinted_models, completed_models):
+#     while unprinted_models:
+#         current_model = unprinted_models.pop()
+#         print(f"Printing model {current_model}...")
+#         completed_models.append(current_model)
+
+
+# def show_models(completed_models):
+#     for model in completed_models:
+#         print(f"Model {model} completed")
+
+
+# unprinted_models = ['geralt', 'ciri', 'ada wong']
+# completed_models = []
+
+# print_models(unprinted_models, completed_models)
+# print()
+# show_models(completed_models)
