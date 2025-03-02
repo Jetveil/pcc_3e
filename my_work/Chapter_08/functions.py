@@ -153,3 +153,41 @@
 # print_models(unprinted_models, completed_models)
 # print()
 # show_models(completed_models)
+
+
+# --- Передача произвольного набора количества аргументов
+
+# def make_pizza(*toppings):
+#     print('\nMaking pizza with the following toppings:')
+#     for topping in toppings:
+#         print(f"\t- {topping}")
+
+
+# make_pizza('mushrooms')
+# make_pizza('mushrooms', 'pepperoni', 'cheese')
+
+
+# --- Позиционные аргументы с произвольными наборами аргументов
+
+# def make_pizza(size, *toppings):
+#     print(f"\nMaking a {size}cm pizza with the following toppings:")
+#     for topping in toppings:
+#         print(f"\t- {topping}")
+
+
+# make_pizza(22, 'mushrooms')
+# make_pizza(35, 'mushrooms', 'pepperoni', 'cheese')
+
+
+# --- Использование произвольного набора именованных аргументов
+
+# def build_profile(first, last, **user_info):
+#     user_info['first_name'] = first
+#     user_info['last_name'] = last
+#     return user_info
+
+
+# user_profile = build_profile(
+#     'albert', 'einstein', location='prinston', field='physic')
+
+# print(user_profile)
