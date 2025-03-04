@@ -182,3 +182,37 @@
 # print(user_profile)
 
 # --- 8.14
+
+# def buildCar(carManufacturer, carModel, **options):
+#     car_dict = {}
+
+#     car_dict['manufactor'] = carManufacturer.title()
+#     car_dict['car_model'] = carModel.title()
+#     for option, v in options.items():
+#         car_dict[option] = v
+
+#     return car_dict
+
+
+# carInfo = buildCar('subaru', 'impreza 1995', color='blue', drive='front-wheel')
+
+# print(carInfo)
+
+# --- grok extra
+
+def create_employee_profile(name, surname, **options):
+    """Create user profile dictionary"""
+    employee_profile_dic = {
+        'first_name': name.title(),
+        'last_name': surname.title()
+    }
+    for option, value in options.items():
+        employee_profile_dic[option] = value
+
+    return employee_profile_dic
+
+
+employee_profile = create_employee_profile(
+    'dim', 'erm', vacation='useless shit', age=31)
+
+print(employee_profile)
