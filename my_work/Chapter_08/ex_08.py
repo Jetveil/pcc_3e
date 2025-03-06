@@ -200,19 +200,40 @@
 
 # --- grok extra
 
-def create_employee_profile(name, surname, **options):
-    """Create user profile dictionary"""
-    employee_profile_dic = {
-        'first_name': name.title(),
-        'last_name': surname.title()
-    }
-    for option, value in options.items():
-        employee_profile_dic[option] = value
+# def create_employee_profile(name, surname, **options):
+#     """Create user profile dictionary"""
+#     employee_profile_dic = {
+#         'first_name': name.title(),
+#         'last_name': surname.title()
+#     }
+#     for option, value in options.items():
+#         employee_profile_dic[option] = value
 
-    return employee_profile_dic
+#     return employee_profile_dic
 
 
-employee_profile = create_employee_profile(
-    'dim', 'erm', vacation='useless shit', age=31)
+# employee_profile = create_employee_profile(
+#     'dim', 'erm', vacation='useless shit', age=31)
 
-print(employee_profile)
+# print(employee_profile)
+
+# --- 8.15
+
+# from printing_func import print_models, show_models
+
+# print_models(['geralt', 'ciri', 'ada wong'], [])
+# show_models([])
+
+# --- 8.16
+
+# import making_pizzas
+# from making_pizzas import make_pizza
+# from making_pizzas import make_pizza as MP
+# import making_pizzas as MP
+# from making_pizzas import *
+
+# making_pizzas.make_pizza(22, 'bbq', 'extra cheese')
+# make_pizza(22, 'bbq', 'extra cheese')
+# MP(22, 'bbq', 'extra cheese')
+# MP.make_pizza(22, 'bbq', 'extra cheese')
+# make_pizza(22, 'bbq', 'extra cheese')
