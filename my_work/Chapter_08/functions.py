@@ -76,13 +76,35 @@
 
 # --- Возвращение словаря
 
-def build_person(first_name, last_name, age=''):
-    person = {'first': first_name, 'last': last_name}
+# def build_person(first_name, last_name, age=''):
+#     person = {'first': first_name, 'last': last_name}
 
-    if 'age':
-        person['age'] = age
-    return person
+#     if 'age':
+#         person['age'] = age
+#     return person
 
 
-musician = build_person('jimi', 'hendrix', age=27)
-print(musician)
+# musician = build_person('jimi', 'hendrix', age=27)
+# print(musician)
+
+
+# --- Использование функции в цикле while
+
+def get_formatted_name(first_name, last_name):
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+
+while True:
+    print("\nTell me your name:")
+    print("(Enter 'q' to quit!)")
+
+    f_name = input("Enter first name: ")
+    if f_name == 'q':
+        break
+    l_name = input("Enter last name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = f"\nGreetings, {get_formatted_name(f_name, l_name)}!"
+    print(formatted_name)
