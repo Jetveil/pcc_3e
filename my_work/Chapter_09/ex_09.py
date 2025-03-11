@@ -103,40 +103,43 @@
 
 # --- 9.5
 
-class User:
-    def __init__(self, first_name, last_name, user_name, user_age):
-        self.name = first_name.title()
-        self.surname = last_name.title()
-        self.username = user_name
-        self.age = user_age
-        self.login_attempts = 0
+# class User:
+#     def __init__(self, first_name, last_name, user_name, user_age):
+#         self.name = first_name.title()
+#         self.surname = last_name.title()
+#         self.username = user_name
+#         self.age = user_age
+#         self.login_attempts = 0
 
-    def increment_login_attempts(self):
-        self.login_attempts += 1
+#     def increment_login_attempts(self):
+#         self.login_attempts += 1
 
-    def reset_login_attempts(self):
-        self.login_attempts = 0
+#     def reset_login_attempts(self):
+#         self.login_attempts = 0
 
-    def describe_user(self):
-        print(f"\nUser name: {self.name}")
-        print(f"User last name: {self.surname}")
-        print(f"User nickname: {self.username}")
-        print(f"User age: {self.age}")
+#     def describe_user(self):
+#         print(f"\nUser name: {self.name}")
+#         print(f"User last name: {self.surname}")
+#         print(f"User nickname: {self.username}")
+#         print(f"User age: {self.age}")
 
-    def greet_user(self):
-        print(f"Hello, {self.name} {self.surname} as {self.username}")
+#     def greet_user(self):
+#         print(f"Hello, {self.name} {self.surname} as {self.username}")
 
 
-ermak = User('dim', 'erm', 'pustotely', 31)
-dudar = User('gosha', 'dudar', 'cock teller', 27)
+# ermak = User('dim', 'erm', 'pustotely', 31)
+# dudar = User('gosha', 'dudar', 'cock teller', 27)
 
-ermak.describe_user()
-ermak.greet_user()
-ermak.increment_login_attempts()
-ermak.increment_login_attempts()
-print(f"Login attempts: {ermak.login_attempts}")
-ermak.reset_login_attempts()
-print(f"Login attempts: {ermak.login_attempts}")
+# ermak.describe_user()
+# ermak.greet_user()
+# ermak.increment_login_attempts()
+# ermak.increment_login_attempts()
+# print(f"Login attempts: {ermak.login_attempts}")
+# ermak.reset_login_attempts()
+# print(f"Login attempts: {ermak.login_attempts}")
 
 # dudar.describe_user()
 # dudar.greet_user()
+
+
+# --- ex 9.6
