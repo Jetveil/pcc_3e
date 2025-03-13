@@ -257,67 +257,148 @@
 
 # --- 9.9
 
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 5
+# class Car:
+#     def __init__(self, make, model, year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 5
 
-    def describe_car(self):
-        fullName = f"\n{self.make}, {self.model}, {self.year}"
-        return fullName.title()
+#     def describe_car(self):
+#         fullName = f"\n{self.make}, {self.model}, {self.year}"
+#         return fullName.title()
 
-    def read_odometer(self):
-        print(f"This car has {self.odometer_reading} kilometeres on it")
+#     def read_odometer(self):
+#         print(f"This car has {self.odometer_reading} kilometeres on it")
 
-    def update_odometer(self, mileage):
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You can't roll back the odometer!")
+#     def update_odometer(self, mileage):
+#         if mileage >= self.odometer_reading:
+#             self.odometer_reading = mileage
+#         else:
+#             print("You can't roll back the odometer!")
 
-    def increment_odometer(self, miles):
-        self.odometer_reading += miles
+#     def increment_odometer(self, miles):
+#         self.odometer_reading += miles
 
-    def fill_gas_tank(self, gasAmount):
-        fillGas = f"Filling gas tank with {gasAmount}cbm"
-        return fillGas
-
-
-class ElectricCar(Car):
-    def __init__(self, make, model, year, battery_capacity):
-        super().__init__(make, model, year)
-        # <-- Аргумент для задания значения батареи при создании экземпляра класса
-        self.battery = Battery(battery_capacity)
-
-    def fill_gas_tank(self, gasAmount):
-        print("This car doesn't have a gas tank")
+#     def fill_gas_tank(self, gasAmount):
+#         fillGas = f"Filling gas tank with {gasAmount}cbm"
+#         return fillGas
 
 
-class Battery:
-    def __init__(self, battery_capacity):
-        self.battery_capacity = battery_capacity
+# class ElectricCar(Car):
+#     def __init__(self, make, model, year, battery_capacity):
+#         super().__init__(make, model, year)
+#         # <-- Аргумент для задания значения батареи при создании экземпляра класса
+#         self.battery = Battery(battery_capacity)
 
-    def describe_battery(self):
-        print(f"Battery capacity: {self.battery_capacity}kW/h")
-        return self.battery_capacity
-
-    def upgrade_battery(self):
-        if self.battery_capacity != 65:
-            self.battery_capacity = 65
-
-    def get_range(self):
-        if self.battery_capacity == 40:
-            range = 150
-        elif self.battery_capacity == 65:
-            range = 225
-
-        print(f"This car can go about {range}km on a full charge")
+#     def fill_gas_tank(self, gasAmount):
+#         print("This car doesn't have a gas tank")
 
 
-my_eclectric_car = ElectricCar('Renault', 'Model 5', 2025, 40)
-my_eclectric_car.battery.describe_battery()
-my_eclectric_car.battery.get_range()
-my_eclectric_car.battery.upgrade_battery()
-my_eclectric_car.battery.get_range()
+# class Battery:
+#     def __init__(self, battery_capacity):
+#         self.battery_capacity = battery_capacity
+
+#     def describe_battery(self):
+#         print(f"Battery capacity: {self.battery_capacity}kW/h")
+#         return self.battery_capacity
+
+#     def upgrade_battery(self):
+#         if self.battery_capacity != 65:
+#             self.battery_capacity = 65
+
+#     def get_range(self):
+#         if self.battery_capacity == 40:
+#             range = 150
+#         elif self.battery_capacity == 65:
+#             range = 225
+
+#         print(f"This car can go about {range}km on a full charge")
+
+
+# my_eclectric_car = ElectricCar('Renault', 'Model 5', 2025, 40)
+# my_eclectric_car.battery.describe_battery()
+# my_eclectric_car.battery.get_range()
+# my_eclectric_car.battery.upgrade_battery()
+# my_eclectric_car.battery.get_range()
+
+
+# --- ex 9.13
+
+# from random import randint
+
+
+# class Die:
+#     def __init__(self, sides=6):
+#         self.sides = sides
+
+#     def roll_die(self):
+#         result = randint(1, self.sides)
+#         return print(result)
+
+
+# six_side_die = Die(6)
+# six_side_die.roll_die()
+# six_side_die.roll_die()
+# six_side_die.roll_die()
+# six_side_die.roll_die()
+
+# print('-----')
+
+# ten_side_die = Die(10)
+# ten_side_die.roll_die()
+# ten_side_die.roll_die()
+# ten_side_die.roll_die()
+# ten_side_die.roll_die()
+
+
+# --- 9.14
+
+from random import choice
+
+values = [1, 'a', 2, 3, 'w', 4, 5, 'z', 6, 'q', 7, 8, 9, 0, 'g']
+
+
+def get_win_values():
+    win_values = []
+    val = 0
+
+    while val < 4:
+        result = choice(values)
+        win_values.append(result)
+        val += 1
+
+    print(f"Get these values to win: \n{win_values}")
+    return win_values
+
+
+def generate_my_ticket():
+    my_ticket = []
+    val = 0
+    while val < 4:
+        result = choice(values)
+        my_ticket.append(result)
+        val += 1
+    print(f"My ticket is: \n{my_ticket}")
+    return my_ticket
+
+
+def get_win_chance(win_values, my_ticket):
+    guess_try = 0
+    current_ticket = my_ticket
+    while current_ticket != win_values:
+        current_ticket = []
+        for v in range(4):
+            result = choice(values)
+            current_ticket.append(result)
+            guess_try += 1
+    print(f"Attemps to match the winning values: \n{guess_try}")
+    return guess_try
+
+
+winning_values = get_win_values()
+my_ticket = generate_my_ticket()
+
+get_win_chance(winning_values, my_ticket)
+
+# --- 9.15
