@@ -41,3 +41,17 @@ from pathlib import Path
 # ex 10.5
 
 path = Path('my_work\Chapter_10\guest_book.txt')
+
+namesList = []
+while True:
+    namePrompt = input("Enter user name: (or press Enter to quit)")
+    if namePrompt == "":
+        break
+    print(f"Hello, {namePrompt.title()}. We'll add you to the guest book")
+    namesList.append(namePrompt)
+
+file_string = ''
+for name in namesList:
+    file_string += f"{name.title()}\n"
+
+path.write_text(file_string)

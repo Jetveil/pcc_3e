@@ -31,3 +31,22 @@ from pathlib import Path
 # contents += 'I love shitting\n'
 
 # path.write_text(contents)
+
+
+# --- Использование исключений для предотвращения
+# аварийного завершения программы
+
+
+print('\nEnter two numbers to divide (or "q" to quit)')
+
+while True:
+    first_num = input('\nEnter first number: ')
+    if first_num == 'q':
+        break
+
+    second_num = input('Enter second number:')
+    if second_num == 'q':
+        break
+
+    answer = int(first_num) / int(second_num)
+    print(answer)
