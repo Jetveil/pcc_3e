@@ -37,16 +37,55 @@ from pathlib import Path
 # аварийного завершения программы
 
 
-print('\nEnter two numbers to divide (or "q" to quit)')
+# print('\nEnter two numbers to divide (or "q" to quit)')
 
-while True:
-    first_num = input('\nEnter first number: ')
-    if first_num == 'q':
-        break
+# while True:
+#     first_num = input('\nEnter first number: ')
+#     if first_num == 'q':
+#         break
 
-    second_num = input('Enter second number:')
-    if second_num == 'q':
-        break
+#     second_num = input('Enter second number:')
+#     if second_num == 'q':
+#         break
+#     try:
+#         answer = int(first_num) / int(second_num)
+#     except ZeroDivisionError:
+#         print("You can't divide by 0")
+#     else:
+#         print(answer)
 
-    answer = int(first_num) / int(second_num)
-    print(answer)
+# --- Обработка исключения FileNotFoundError
+
+# path = Path('chapter_10/exceptions/alice.txt')
+# try:
+#     contents = path.read_text(encoding='utf-8')
+# except FileNotFoundError:
+#     print(f"File {path} does not exists")
+# else:
+#     words = contents.split()
+#     num_words = len(words)
+#     print(f"The file {path.name} has about {num_words} words.")
+
+
+# --- Работа с несколькими файлами
+
+path = Path('chapter_10/exceptions/')
+filenames = ['alice.txt', 'siddhartha.txt',
+             'moby_dick.txt', 'little_women.txt']
+
+
+def count_words(filenames):
+    """Подсчитывает приблизительное количество слов в файле"""
+    try:
+        contents = path.read_text(encoding='utf-8')
+    except FileNotFoundError:
+        print(f"File {path} does not exist")
+    else:
+        words = contents.split()
+        num_words = len(words)
+        print(f"The file {path.name} has about {num_words} words.")
+
+
+for filename in filenames:
+    path = Path(f"chapter_10/exceptions/{filename}")
+    count_words(path)
