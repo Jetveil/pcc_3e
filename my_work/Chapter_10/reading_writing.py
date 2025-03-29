@@ -69,23 +69,47 @@ from pathlib import Path
 
 # --- Работа с несколькими файлами
 
-path = Path('chapter_10/exceptions/')
-filenames = ['alice.txt', 'siddhartha.txt',
-             'moby_dick.txt', 'little_women.txt']
+# path = Path('chapter_10/exceptions/')
+# filenames = ['alice.txt', 'siddhartha.txt',
+#              'moby_dick.txt', 'little_women.txt']
 
 
-def count_words(filenames):
-    """Подсчитывает приблизительное количество слов в файле"""
-    try:
-        contents = path.read_text(encoding='utf-8')
-    except FileNotFoundError:
-        print(f"File {path} does not exist")
-    else:
-        words = contents.split()
-        num_words = len(words)
-        print(f"The file {path.name} has about {num_words} words.")
+# def count_words(filenames):
+#     """Подсчитывает приблизительное количество слов в файле"""
+#     try:
+#         contents = path.read_text(encoding='utf-8')
+#     except FileNotFoundError:
+#         print(f"File {path.name} does not exist")
+#     else:
+#         words = contents.split()
+#         num_words = len(words)
+#         print(f"The file {path.name} has about {num_words} words.")
 
 
-for filename in filenames:
-    path = Path(f"chapter_10/exceptions/{filename}")
-    count_words(path)
+# for filename in filenames:
+#     path = Path(f"chapter_10/exceptions/{filename}")
+#     count_words(path)
+
+# --- Ошибки без уведомления пользователя
+
+
+# path = Path('chapter_10/exceptions/')
+# filenames = ['alice.txt', 'siddhartha.txt',
+#              'moby_dick.txt', 'little_women.txt']
+
+
+# def count_words(filenames):
+#     """Подсчитывает приблизительное количество слов в файле"""
+#     try:
+#         contents = path.read_text(encoding='utf-8')
+#     except FileNotFoundError:
+#         pass  # <-- Пользователь не видит никакого сообщения об ошибке
+#     else:
+#         words = contents.split()
+#         num_words = len(words)
+#         print(f"The file {path.name} has about {num_words} words.")
+
+
+# for filename in filenames:
+#     path = Path(f"chapter_10/exceptions/{filename}")
+#     count_words(path)
