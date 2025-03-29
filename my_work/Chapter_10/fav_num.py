@@ -2,23 +2,28 @@ from pathlib import Path
 import json
 
 
-def get_user_num(path):
+def guess_user_num(path):
+    path = Path("my_work\Chapter_10/fav_num.json")
+    user_num = get_stored_num(path)
+    if user_num:
+        print(f"Your fav num is: {user_num}")
+    else:
+        user_num = get_user_new_num()
+
+
+def get_user_new_num(path):
     path = Path("my_work\Chapter_10/fav_num.json")
     user_num = input("Enter your favorite number: ")
     content = json.dumps(user_num)
     path.write_text(content)
-
-# def get_user_new_num(path):
-#     path = Path("my_work\Chapter_10/fav_num.json")
+    return user_num
 
 
-def guess_user_num():
+def get_stored_num():
     path = Path("my_work\Chapter_10/fav_num.json")
     if path.exists():
-        fav_num = path.read_text()
-        print(f"I know your fav number! It is {fav_num}")
+        content = path.read_text()
+        fav_num = json.loads(content)
+        return fav_num
     else:
-        get_user_num(path)
-
-
-guess_user_num()
+        return None
