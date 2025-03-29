@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 # path = Path('chapter_10/reading_from_a_file/pi_million_digits.txt')
 # content = path.read_text()
@@ -113,3 +114,88 @@ from pathlib import Path
 # for filename in filenames:
 #     path = Path(f"chapter_10/exceptions/{filename}")
 #     count_words(path)
+
+
+# --- Сохранение данных JSON
+
+# nums = [2, 3, 5, 7, 11, 13]
+
+# path = Path('my_work\Chapter_10/numbers.json')
+# contents = json.dumps(nums)
+# path.write_text(contents)
+
+
+# --- Чтение данных JSON
+
+# path = Path('my_work\Chapter_10/numbers.json')
+# contents = path.read_text()
+# nums = json.loads(contents)
+
+# print(nums)
+
+# --- Сохранение пользовательских данных
+
+# path = Path('my_work\Chapter_10/users.json')
+# username = input("What's your name?: ")
+# contents = json.dumps(username)
+# path.write_text(contents)
+# print(f"We will remember your name when you come back, {username}")
+
+
+# --- Чтение пользовательских данных
+
+# path = Path('my_work\Chapter_10/users.json')
+# contents = path.read_text()
+# username = json.loads(contents)
+
+# print(f"Welcome, {username}!")
+
+# --- Объединение записи и чтения в один файл
+
+# path = Path('my_work\Chapter_10/users.json')
+# if path.exists():
+#     path = Path('my_work\Chapter_10/users.json')
+#     contents = path.read_text()
+#     username = json.loads(contents)
+#     print(f"Welcome, {username}!")
+# else:
+#     username = input("What's your name?: ")
+#     contents = json.dumps(username)
+#     path.write_text(contents)
+#     print(f"We will remember your name when you come back, {username}")
+
+
+# --- Рефакторинг
+
+# def get_stored_username(path):
+#     """Получает хранимое имя пользователя, если оно существует."""
+#     path = Path('my_work\Chapter_10/users.json')
+#     if path.exists():
+#         contents = path.read_text()
+#         username = json.loads(contents)
+#         return username
+#     else:
+#         return None
+
+
+# def get_new_username(path):
+#     """Запрашивает новое имя пользователя"""
+#     path = Path('my_work\Chapter_10/users.json')
+#     username = input("What's your name?: ")
+#     contents = json.dumps(username)
+#     path.write_text(contents)
+#     return username
+
+
+# def greet_user():
+#     """Приветствует пользователя по имени"""
+#     path = Path('my_work\Chapter_10/users.json')
+#     username = get_stored_username(path)
+#     if username:
+#         print(f"Welcome back, {username}!")
+#     else:
+#         username = get_new_username(path)
+#         print(f"We will remember your name when you come back, {username}")
+
+
+# greet_user()
