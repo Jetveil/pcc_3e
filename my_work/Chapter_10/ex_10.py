@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 # ex 10.1
 
@@ -116,3 +117,51 @@ from pathlib import Path
 # repititions_count = text.count("но ")
 
 # print(f"Повторений в тексте: {repititions_count}")
+
+
+# 10.13
+
+
+def get_stored_userInfo(path):
+    """Получает хранимое имя пользователя, если оно существует."""
+    if path.exists():
+        contents = path.read_text()
+        userInfo = json.loads(contents)
+        return userInfo
+    else:
+        return None
+
+
+def get_new_userInfo(path):
+    """Запрашивает новое имя пользователя"""
+    username = input("What's your name?: ")
+    userAge = int(input("What's your age?: "))
+    userCountry = input("What country were you born?: ")
+    userInfo = {
+        'username': username,
+        'userAge': userAge,
+        'userCountry': userCountry
+    }
+    contents = json.dumps(userInfo)
+    path.write_text(contents)
+    return userInfo
+
+
+def greet_user():
+    """Приветствует пользователя по имени"""
+    path = Path('my_work\Chapter_10/users.json')
+
+    userInfo = get_stored_userInfo(path)
+
+    isNameCorrect = input(f"Is name {userInfo['username']} correct?")
+
+    if userInfo:
+        print(
+            f"Welcome back, {userInfo['username']}, {userInfo['userAge']} years old from {userInfo['userCountry']}!")
+    else:
+        userInfo = get_new_userInfo(path)
+        print(
+            f"We will remember your name when you come back, {userInfo['username']}, {userInfo['userAge']} years old from {userInfo['userCountry']}")
+
+
+greet_user()
