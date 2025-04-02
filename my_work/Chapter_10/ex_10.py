@@ -153,11 +153,15 @@ def greet_user():
 
     userInfo = get_stored_userInfo(path)
 
-    isNameCorrect = input(f"Is name {userInfo['username']} correct?")
-
-    if userInfo:
-        print(
-            f"Welcome back, {userInfo['username']}, {userInfo['userAge']} years old from {userInfo['userCountry']}!")
+    isNameCorrect = input(f"Is name {userInfo['username']} correct? (y/n) ")
+    if isNameCorrect == "y":
+        if userInfo:
+            print(
+                f"Welcome back, {userInfo['username']}, {userInfo['userAge']} years old from {userInfo['userCountry']}!")
+        else:
+            userInfo = get_new_userInfo(path)
+            print(
+                f"We will remember your name when you come back, {userInfo['username']}, {userInfo['userAge']} years old from {userInfo['userCountry']}")
     else:
         userInfo = get_new_userInfo(path)
         print(
